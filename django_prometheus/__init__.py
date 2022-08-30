@@ -15,11 +15,11 @@ __all__ = ["middleware", "models", "pip_prometheus"]
 __version__ = "2.3.0.dev0"
 
 # Import pip_prometheus to export the pip metrics automatically.
-try:
-    import pip_prometheus
-except ImportError:
-    # If people don't have pip, don't export anything.
-    pass
+#  try:
+    #  import pip_prometheus
+#  except ImportError:
+    #  # If people don't have pip, don't export anything.
+    #  pass
 
 if django.VERSION < (3, 1):
     default_app_config = "django_prometheus.apps.DjangoPrometheusConfig"
