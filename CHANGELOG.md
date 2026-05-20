@@ -2,10 +2,15 @@
 
 ## Unreleased (asians-cloud django-5 fork)
 
-* Support Django 5.x / Python 3.12 and the psycopg v3 driver.
-* The PostgreSQL and PostGIS metrics backends now import `psycopg2` lazily:
-  when only psycopg v3 is installed (the Django 5 default), the per-cursor
-  `cursor_factory` wiring is skipped and connection-level metrics still work.
+* Support Django 5.x / Python 3.12 and the **psycopg v3** driver.
+* The PostgreSQL and PostGIS metrics backends now detect the active driver
+  (`psycopg` v3 or `psycopg2`) and wrap the right cursor class. On psycopg v3
+  the metrics cursor is layered onto Django's own `connection.cursor_factory`
+  after connect (Django sets it while opening the connection), so full
+  per-query metrics work on both drivers.
+* Bump dependencies: psycopg2 → `psycopg[binary]>=3.2`, `prometheus-client>=0.20`,
+  `django-redis>=5.4`, `pytest>=8.2`, `pytest-django>=4.8`, black/flake8/isort
+  to current; tox matrix → Django 4.2–5.2 on Python 3.9–3.12.
 * Update trove classifiers (Django 3.2–5.2, Python 3.8–3.12).
 
 ## v2.2.0 - December 19, 2021

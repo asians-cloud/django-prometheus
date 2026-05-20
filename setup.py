@@ -43,7 +43,7 @@ setup(
     setup_requires=["pytest-runner"],
     options={"bdist_wheel": {"universal": "1"}},
     install_requires=[
-        "prometheus-client>=0.7",
+        "prometheus-client>=0.20",
     ],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
