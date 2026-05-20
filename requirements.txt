@@ -1,13 +1,13 @@
-django-redis>=4.12.1
-black; python_version >= '3.6'
-flake8
-isort>=5.5.4,<6
-prometheus-client>=0.12.0
+django-redis>=5.4
+black>=24.3
+flake8>=7.0
+isort>=5.13,<6
+prometheus-client>=0.20
 pip-prometheus>=1.2.1
-mysqlclient
-psycopg2
-pytest==6.2.5
-pytest-django
+mysqlclient>=2.2
+psycopg[binary]>=3.2
+pytest>=8.2
+pytest-django>=4.8
 pylibmc
 pymemcache
 python-memcached
