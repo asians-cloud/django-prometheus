@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased (asians-cloud django-5 fork)
+
+* Support Django 5.x / Python 3.12 and the psycopg v3 driver.
+* The PostgreSQL and PostGIS metrics backends now import `psycopg2` lazily:
+  when only psycopg v3 is installed (the Django 5 default), the per-cursor
+  `cursor_factory` wiring is skipped and connection-level metrics still work.
+* Update trove classifiers (Django 3.2–5.2, Python 3.8–3.12).
+
 ## v2.2.0 - December 19, 2021
 
 * Switch to Github Actions CI, remove travis-ci.
